@@ -224,7 +224,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-ghost" href="resume.pdf">Résumé</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
     </nav>
   </div>
 </header>
@@ -248,7 +248,7 @@
       <ol class="stages">
         <li class="stage">
           <h3>Collect</h3>
-          <p>REST APIs with OAuth and pagination, emailed CSV and Excel reports, S3 and flat files</p>
+          <p>REST APIs with OAuth and pagination, emailed CSV and Excel reports, AWS S3 buckets and flat files</p>
         </li>
         <li class="stage">
           <h3>Land</h3>
@@ -267,7 +267,7 @@
           <p>Power BI, SSRS and Domo dashboards for business stakeholders</p>
         </li>
       </ol>
-      <p class="orchestrator"><strong>Scheduled and monitored with</strong> Apache Airflow, Azure Data Factory and SQL Server Agent, including retries, alerts and backfills</p>
+      <p class="orchestrator"><strong>Scheduled and monitored with</strong> Apache Airflow DAGs, Azure Data Factory and SQL Server Agent, including retries, alerts and backfills</p>
     </div>
   </section>
 
@@ -293,22 +293,22 @@
   <section class="block" id="work" aria-labelledby="work-title">
     <div class="wrap">
       <h2 id="work-title">Selected work</h2>
-      <p class="intro">Four projects from recent roles. Client data is confidential, so these describe the problem and approach rather than share code.</p>
+      <p class="intro">Projects from across my career, most recent first. Client data is confidential, so these describe the problem and approach rather than share code.</p>
       <div class="work-list">
 
         <article class="work">
           <div>
-            <h3>Unified advertising data from DV360, LinkedIn and Meta</h3>
+            <h3>Unified advertising data from DV360, LinkedIn and Meta, migrated to Snowflake</h3>
             <p class="context">Advertising technology client, Zensar Technologies, 2022 to 2024</p>
           </div>
           <div>
             <dl>
               <div><dt>Problem</dt><dd>Campaign data arrived from several ad platforms in different formats, schemas and metric definitions, and some platforms only sent reports by email.</dd></div>
-              <div><dt>What I built</dt><dd>Python ingestion from each platform's REST API, plus automated collection of emailed CSV and Excel reports, all landing in the same SQL staging layer. PostgreSQL transformations merged everything into one common model, orchestrated by Airflow DAGs with retries, alerting and backfills.</dd></div>
-              <div><dt>Result</dt><dd>One reporting layer across all platforms, with reconciliation checks that catch missed pulls, partial loads and source-side discrepancies.</dd></div>
+              <div><dt>What I built</dt><dd>Python ingestion from each platform's REST API, plus automated collection of emailed CSV and Excel reports, all landing in the same SQL staging layer. PostgreSQL transformations merged everything into one common model, orchestrated end to end by Apache Airflow DAGs with task dependencies, retries, failure alerts and backfills for historical reloads. I then migrated the consolidated data from PostgreSQL to Snowflake.</dd></div>
+              <div><dt>Result</dt><dd>One reporting layer across all platforms, now running on Snowflake, with reconciliation checks that catch missed pulls, partial loads and source-side discrepancies.</dd></div>
             </dl>
             <ul class="tags" aria-label="Technologies">
-              <li>Python</li><li>REST APIs</li><li>PostgreSQL</li><li>Apache Airflow</li><li>Power BI</li><li>Domo</li>
+              <li>Python</li><li>REST APIs</li><li>PostgreSQL</li><li>Snowflake</li><li>Airflow DAGs</li><li>Power BI</li><li>Domo</li>
             </ul>
           </div>
         </article>
@@ -337,7 +337,7 @@
           </div>
           <div>
             <dl>
-              <div><dt>Problem</dt><dd>A legacy ETL process moved Guidewire claims and policy data from AWS S3 to on-premise SQL Server, too slowly for near real-time analytics and planned ML work.</dd></div>
+              <div><dt>Problem</dt><dd>A legacy ETL process moved Guidewire claims and policy data from AWS S3 buckets to on-premise SQL Server, too slowly for near real-time analytics and planned ML work.</dd></div>
               <div><dt>What I built</dt><dd>I led the migration to a reusable framework of parameterised Azure Data Factory pipelines and Databricks SQL notebooks, supporting incremental and delta loads across raw and curated zones, with data quality checks in Databricks.</dd></div>
               <div><dt>Result</dt><dd>Near real-time data availability, validated through full and incremental load testing against an audit framework, with Power BI and SSRS reporting on top.</dd></div>
             </dl>
@@ -364,6 +364,23 @@
           </div>
         </article>
 
+        <article class="work">
+          <div>
+            <h3>STARS: student test analysis and reporting system</h3>
+            <p class="context">Illuminate EdTech India, 2018 to 2021. My first data engineering project.</p>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Problem</dt><dd>Schools needed incoming student assessment data loaded accurately and on time into a secure, web-based platform for test analysis and reporting.</dd></div>
+              <div><dt>What I built</dt><dd>ETL models and SSIS packages that extract and load assessment data, with validation scripts enforcing business rules. I wrote the complex SQL joins and subqueries behind the reporting datasets, and ran the SSIS environment: SQL Server Agent jobs, alerts, Database Mail and package scheduling.</dd></div>
+              <div><dt>Result</dt><dd>Automated, validated loads taken through unit testing and UAT into production, with ETL documentation handed over to the support team.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies">
+              <li>SSIS</li><li>SQL Server</li><li>T-SQL</li><li>SQL Server Agent</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -385,7 +402,7 @@
           <div>
             <h3>Senior Software Engineer</h3>
             <p class="org">Zensar Technologies</p>
-            <p class="summary">Built multi-platform advertising data pipelines with Python, Airflow, PostgreSQL and BigQuery, and led a Guidewire insurance ETL migration to Azure Data Factory and Databricks.</p>
+            <p class="summary">Built multi-platform advertising data pipelines with Python, Airflow, PostgreSQL and BigQuery, migrated them from PostgreSQL to Snowflake, and led a Guidewire insurance ETL migration to Azure Data Factory and Databricks.</p>
           </div>
         </li>
         <li class="job">
@@ -413,8 +430,8 @@
       <h2 id="skills-title">Skills</h2>
       <dl class="skills">
         <div><dt>Databases and SQL</dt><dd>SQL Server 2014 to 2019, T-SQL, PostgreSQL, stored procedures, query optimisation and performance tuning</dd></div>
-        <div><dt>ETL and orchestration</dt><dd>SSIS, Apache Airflow, Python ETL, Domo dataflows, incremental and delta loads, data migration, validation and reconciliation</dd></div>
-        <div><dt>Cloud</dt><dd>Azure Data Factory, Azure Databricks, Azure SQL, Azure DevOps, Google Cloud Storage, BigQuery, AWS S3</dd></div>
+        <div><dt>ETL and orchestration</dt><dd>SSIS, Apache Airflow DAGs (dependencies, retries, alerting, backfills), Python ETL, Domo dataflows, incremental and delta loads, data migration, validation and reconciliation</dd></div>
+        <div><dt>Cloud</dt><dd>Azure Data Factory, Azure Databricks, Azure SQL, Azure DevOps, Google Cloud Storage, BigQuery, AWS S3, Snowflake</dd></div>
         <div><dt>API and file ingestion</dt><dd>REST APIs with token and OAuth auth, pagination and rate limits, JSON parsing, automated email report retrieval, CSV and Excel ingestion</dd></div>
         <div><dt>BI and reporting</dt><dd>Power BI, SSRS, Domo, FetchXML</dd></div>
         <div><dt>Platforms</dt><dd>Microsoft Dynamics 365, KingswaySoft, Guidewire, DealerSocket, Google DV360, LinkedIn Ads, Meta Ads</dd></div>
@@ -429,7 +446,7 @@
       <div class="links">
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/rakesh-g-p-442786148" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/RakeshGP-Rockey" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-solid" href="resume.pdf">Download résumé</a>
+        <a class="btn btn-solid" href="resume.pdf" download="Rakesh_GP_Resume.pdf">Download résumé</a>
       </div>
     </div>
   </section>
