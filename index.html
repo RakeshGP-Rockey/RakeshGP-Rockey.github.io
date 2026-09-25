@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rakesh G P | Lead Data Engineer</title>
+<meta name="description" content="Rakesh G P, Lead Data Engineer in Bengaluru. 8+ years building ETL pipelines, data warehouses and reporting across insurance, adtech, automotive, associations and education.">
+<meta property="og:title" content="Rakesh G P | Lead Data Engineer">
+<meta property="og:description" content="ETL pipelines, data warehouses and reporting on SQL Server, Airflow, Azure and GCP. Open to remote work with US/EU overlap.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2f3342">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f3342'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' text-anchor='middle' fill='%23F2DA00'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2f3342;
+    --yellow: #F2DA00;
+    --white: #ffffff;
+    --text-soft: rgba(255,255,255,0.76);
+    --line: rgba(255,255,255,0.14);
+    --line-strong: rgba(255,255,255,0.28);
+    --display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    --body: "Raleway", "Helvetica Neue", Arial, sans-serif;
+    --wrap: 1200px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+  h1, h2, h3 { font-family: var(--display); margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .skip {
+    position: absolute; left: -999px; top: 8px;
+    background: var(--yellow); color: var(--navy); padding: 10px 16px;
+    font-family: var(--display); font-weight: 600; z-index: 10;
+  }
+  .skip:focus { left: 8px; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 5;
+    background: rgba(47,51,66,0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 76px; gap: 24px;
+  }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 20px; text-decoration: none; }
+  .nav { display: flex; align-items: center; gap: 32px; font-family: var(--display); font-weight: 500; font-size: 15px; }
+  .nav a { text-decoration: none; }
+  .nav a:hover { color: var(--yellow); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 48px; padding: 0 24px; border-radius: 999px;
+    font-family: var(--display); font-weight: 600; font-size: 16px;
+    text-decoration: none; border: 1.5px solid var(--yellow);
+  }
+  .btn-solid { background: var(--yellow); color: var(--navy); }
+  .btn-solid:hover { background: #fff; border-color: #fff; }
+  .btn-ghost { color: var(--yellow); }
+  .btn-ghost:hover { background: var(--yellow); color: var(--navy); }
+  .nav .btn { min-height: 44px; padding: 0 20px; font-size: 15px; }
+  .nav .btn:hover { color: var(--navy); }
+
+  /* Hero */
+  .hero { padding: 104px 0 56px; }
+  .hero h1 {
+    font-weight: 700;
+    font-size: clamp(56px, 10vw, 128px);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+  }
+  .hero .role {
+    margin-top: 20px;
+    font-family: var(--display); font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--yellow);
+  }
+  .hero .lede { margin-top: 28px; max-width: 640px; font-size: 20px; color: var(--text-soft); }
+  .hero .actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; }
+
+  /* Pipeline */
+  .pipeline { padding: 40px 0 112px; }
+  .pipeline-caption { font-size: 15px; color: var(--text-soft); margin-bottom: 20px; }
+  .stages {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px;
+  }
+  .stage {
+    position: relative;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 14px;
+    padding: 20px 20px 22px;
+    transition: border-color 400ms ease, background-color 400ms ease;
+  }
+  .stage:not(:last-child)::after {
+    content: ""; position: absolute; top: 50%; right: -29px;
+    width: 28px; height: 2px; background: var(--yellow);
+  }
+  .stage h3 { font-size: 18px; font-weight: 600; }
+  .stage p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--text-soft); }
+  .stage.lit { border-color: var(--yellow); background: rgba(242,218,0,0.07); }
+  .orchestrator {
+    margin-top: 20px; padding: 14px 20px;
+    border: 1.5px dashed var(--line-strong); border-radius: 14px;
+    font-size: 15px; color: var(--text-soft);
+  }
+  .orchestrator strong { font-family: var(--display); font-weight: 600; color: var(--white); }
+
+  /* Sections */
+  section.block { padding: 112px 0; border-top: 1px solid var(--line); }
+  .block h2 { font-weight: 600; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.1; max-width: 820px; }
+  .block .intro { margin-top: 20px; max-width: 640px; color: var(--text-soft); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; margin-top: 48px; }
+  .about-grid p + p { margin-top: 20px; }
+  .about-text p { color: var(--text-soft); max-width: 62ch; }
+  .facts { margin: 0; display: grid; gap: 22px; align-content: start; }
+  .facts div { border-top: 1px solid var(--line); padding-top: 16px; }
+  .facts dt { font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--yellow); }
+  .facts dd { margin: 4px 0 0; font-size: 17px; }
+
+  /* Work */
+  .work-list { margin-top: 56px; }
+  .work {
+    display: grid; grid-template-columns: 5fr 7fr; gap: 64px;
+    padding: 48px 0; border-top: 1px solid var(--line);
+  }
+  .work:last-child { border-bottom: 1px solid var(--line); }
+  .work h3 { font-size: 28px; font-weight: 600; line-height: 1.2; }
+  .work .context { margin-top: 12px; font-size: 16px; color: var(--text-soft); }
+  .work dl { margin: 0; display: grid; gap: 18px; }
+  .work dt { font-family: var(--display); font-weight: 600; font-size: 16px; }
+  .work dd { margin: 4px 0 0; color: var(--text-soft); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding: 0; list-style: none; }
+  .tags li {
+    font-size: 14px; font-weight: 600; padding: 5px 12px;
+    border-radius: 6px; background: rgba(255,255,255,0.08);
+  }
+
+  /* Experience timeline */
+  .timeline { list-style: none; margin: 56px 0 0; padding: 0; }
+  .job {
+    display: grid; grid-template-columns: 220px 1fr; gap: 48px;
+    padding: 36px 0; border-top: 1px solid var(--line);
+  }
+  .job .when { font-family: var(--display); font-weight: 500; font-size: 16px; color: var(--text-soft); }
+  .job h3 { font-size: 24px; font-weight: 600; }
+  .job .org { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--yellow); margin-top: 4px; }
+  .job p.summary { margin-top: 12px; color: var(--text-soft); max-width: 64ch; }
+
+  /* Skills */
+  .skills { margin: 56px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 64px; }
+  .skills div { border-top: 1px solid var(--line); padding-top: 20px; }
+  .skills dt { font-family: var(--display); font-weight: 600; font-size: 18px; }
+  .skills dd { margin: 8px 0 0; color: var(--text-soft); }
+
+  /* Contact */
+  .contact h2 { font-size: clamp(40px, 6vw, 76px); font-weight: 700; letter-spacing: -0.035em; }
+  .contact .email {
+    display: inline-block; margin-top: 40px;
+    font-family: var(--display); font-weight: 500; font-size: clamp(20px, 3vw, 32px);
+    text-decoration: none; border-bottom: 3px solid var(--yellow); padding-bottom: 4px;
+    word-break: break-all;
+  }
+  .contact .email:hover { color: var(--yellow); }
+  .contact .links { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; }
+
+  footer { border-top: 1px solid var(--line); }
+  footer .wrap {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    padding-top: 28px; padding-bottom: 28px; font-size: 15px; color: var(--text-soft);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .stages { grid-template-columns: 1fr; gap: 24px; }
+    .stage:not(:last-child)::after { top: auto; bottom: -25px; right: auto; left: 32px; width: 2px; height: 24px; }
+    .about-grid, .work { grid-template-columns: 1fr; gap: 32px; }
+    .skills { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 20px; }
+    .nav a:not(.btn) { display: none; }
+    .hero { padding-top: 72px; }
+    section.block { padding: 80px 0; }
+    .job { grid-template-columns: 1fr; gap: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .stage { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Rakesh G P</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-ghost" href="resume.pdf">Résumé</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>Rakesh G P</h1>
+      <p class="role">Lead Data Engineer in Bengaluru, working remotely with US and EU teams</p>
+      <p class="lede">I take data from vendor APIs, emailed reports and legacy systems, land it safely, and turn it into warehouses and reports that business teams can trust. Eight years across insurance, adtech, automotive retail, associations and education.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="mailto:rakeshgpgiriyapura@gmail.com">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pipeline" aria-labelledby="pipeline-title">
+    <div class="wrap">
+      <h2 id="pipeline-title" class="pipeline-caption">How I usually build a data platform</h2>
+      <ol class="stages">
+        <li class="stage">
+          <h3>Collect</h3>
+          <p>REST APIs with OAuth and pagination, emailed CSV and Excel reports, S3 and flat files</p>
+        </li>
+        <li class="stage">
+          <h3>Land</h3>
+          <p>Raw SQL staging tables kept for audit, traceability and reprocessing</p>
+        </li>
+        <li class="stage">
+          <h3>Transform</h3>
+          <p>PostgreSQL, T-SQL, Databricks, SSIS and BigQuery to clean, dedupe and standardise</p>
+        </li>
+        <li class="stage">
+          <h3>Model</h3>
+          <p>Fact and dimension tables, incremental loads, reconciliation checks</p>
+        </li>
+        <li class="stage">
+          <h3>Report</h3>
+          <p>Power BI, SSRS and Domo dashboards for business stakeholders</p>
+        </li>
+      </ol>
+      <p class="orchestrator"><strong>Scheduled and monitored with</strong> Apache Airflow, Azure Data Factory and SQL Server Agent, including retries, alerts and backfills</p>
+    </div>
+  </section>
+
+  <section class="block" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 id="about-title">Reliable data, delivered on schedule</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>My foundation is the Microsoft data stack: SQL Server, T-SQL, SSIS, SSRS and Power BI. Over the years I've extended that into Python, PostgreSQL and Apache Airflow, and delivered projects on Azure Data Factory, Databricks, Google Cloud Storage and BigQuery.</p>
+          <p>A lot of my work is the unglamorous part that everything else depends on: pulling data from vendor APIs with tokens, rate limits and date-windowed incremental loads, collecting reports that only arrive by email, and reconciling the numbers against the source so nothing goes missing quietly.</p>
+          <p>I'm open to full-time and contract roles, fully remote.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Experience</dt><dd>8+ years in data engineering</dd></div>
+          <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+          <div><dt>Time zone overlap</dt><dd>4 to 6 hours with the US</dd></div>
+          <div><dt>Industries</dt><dd>Insurance, adtech, automotive retail, associations, education</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 id="work-title">Selected work</h2>
+      <p class="intro">Four projects from recent roles. Client data is confidential, so these describe the problem and approach rather than share code.</p>
+      <div class="work-list">
+
+        <article class="work">
+          <div>
+            <h3>Unified advertising data from DV360, LinkedIn and Meta</h3>
+            <p class="context">Advertising technology client, Zensar Technologies, 2022 to 2024</p>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Problem</dt><dd>Campaign data arrived from several ad platforms in different formats, schemas and metric definitions, and some platforms only sent reports by email.</dd></div>
+              <div><dt>What I built</dt><dd>Python ingestion from each platform's REST API, plus automated collection of emailed CSV and Excel reports, all landing in the same SQL staging layer. PostgreSQL transformations merged everything into one common model, orchestrated by Airflow DAGs with retries, alerting and backfills.</dd></div>
+              <div><dt>Result</dt><dd>One reporting layer across all platforms, with reconciliation checks that catch missed pulls, partial loads and source-side discrepancies.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>REST APIs</li><li>PostgreSQL</li><li>Apache Airflow</li><li>Power BI</li><li>Domo</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work">
+          <div>
+            <h3>Log-level ad data on Google Cloud</h3>
+            <p class="context">Advertising technology client, Zensar Technologies, 2022 to 2024</p>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Problem</dt><dd>Impression and event-level files from ad platforms were too granular to report on directly.</dd></div>
+              <div><dt>What I built</dt><dd>Cloud Storage buckets to receive log-level transfer files, BigQuery datasets over them, and SQL that rolls impressions, clicks and conversions up to campaign-level metrics.</dd></div>
+              <div><dt>Result</dt><dd>Granular log data feeding the same downstream fact and dimension tables as the API data.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies">
+              <li>GCP Cloud Storage</li><li>BigQuery</li><li>SQL</li><li>Dimensional modelling</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work">
+          <div>
+            <h3>Legacy ETL migration to Azure for Guidewire insurance data</h3>
+            <p class="context">Multifamily housing insurance client, Zensar Technologies</p>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Problem</dt><dd>A legacy ETL process moved Guidewire claims and policy data from AWS S3 to on-premise SQL Server, too slowly for near real-time analytics and planned ML work.</dd></div>
+              <div><dt>What I built</dt><dd>I led the migration to a reusable framework of parameterised Azure Data Factory pipelines and Databricks SQL notebooks, supporting incremental and delta loads across raw and curated zones, with data quality checks in Databricks.</dd></div>
+              <div><dt>Result</dt><dd>Near real-time data availability, validated through full and incremental load testing against an audit framework, with Power BI and SSRS reporting on top.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies">
+              <li>Azure Data Factory</li><li>Databricks</li><li>AWS S3</li><li>SQL Server</li><li>Power BI</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="work">
+          <div>
+            <h3>Association CRM data integration on Microsoft Dynamics</h3>
+            <p class="context">ProTech association management platform, R Systems, 2024 to present</p>
+          </div>
+          <div>
+            <dl>
+              <div><dt>Problem</dt><dd>Membership data came in as CSV, Excel and flat files and was loaded by hand, leaving duplicate and inconsistent member records across modules.</dd></div>
+              <div><dt>What I built</dt><dd>SSIS packages with the KingswaySoft toolkit that load and upsert memberships, committees, chapters, accounts, contacts and sponsorships into Dynamics, with validation and cleansing built in. Parameterised SSRS reports use FetchXML directly against the CRM.</dd></div>
+              <div><dt>Result</dt><dd>Recurring loads that run without manual file processing, and reports on membership growth, sponsorship revenue and committee engagement.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Technologies">
+              <li>SSIS</li><li>KingswaySoft</li><li>Dynamics 365</li><li>SSRS</li><li>FetchXML</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <h2 id="exp-title">Experience</h2>
+      <ol class="timeline">
+        <li class="job">
+          <div class="when">Dec 2024 to present</div>
+          <div>
+            <h3>Lead Data Engineer</h3>
+            <p class="org">R Systems International</p>
+            <p class="summary">Own the ETL and reporting for an association CRM on Microsoft Dynamics, from design through testing, deployment and ongoing monitoring.</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Sep 2022 to Dec 2024</div>
+          <div>
+            <h3>Senior Software Engineer</h3>
+            <p class="org">Zensar Technologies</p>
+            <p class="summary">Built multi-platform advertising data pipelines with Python, Airflow, PostgreSQL and BigQuery, and led a Guidewire insurance ETL migration to Azure Data Factory and Databricks.</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Jan 2021 to Sep 2022</div>
+          <div>
+            <h3>Data Implementation Specialist</h3>
+            <p class="org">Solera India (DealerSocket)</p>
+            <p class="summary">Unified vehicle sales, service and inventory data from multiple dealership systems into one reporting layer using SSIS, SQL Server and SSRS.</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="when">Mar 2018 to Jan 2021</div>
+          <div>
+            <h3>Data Engineer</h3>
+            <p class="org">Illuminate EdTech India</p>
+            <p class="summary">Built SSIS-based ETL for a student assessment and reporting platform, with validation rules, job scheduling and full UAT support.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <h2 id="skills-title">Skills</h2>
+      <dl class="skills">
+        <div><dt>Databases and SQL</dt><dd>SQL Server 2014 to 2019, T-SQL, PostgreSQL, stored procedures, query optimisation and performance tuning</dd></div>
+        <div><dt>ETL and orchestration</dt><dd>SSIS, Apache Airflow, Python ETL, Domo dataflows, incremental and delta loads, data migration, validation and reconciliation</dd></div>
+        <div><dt>Cloud</dt><dd>Azure Data Factory, Azure Databricks, Azure SQL, Azure DevOps, Google Cloud Storage, BigQuery, AWS S3</dd></div>
+        <div><dt>API and file ingestion</dt><dd>REST APIs with token and OAuth auth, pagination and rate limits, JSON parsing, automated email report retrieval, CSV and Excel ingestion</dd></div>
+        <div><dt>BI and reporting</dt><dd>Power BI, SSRS, Domo, FetchXML</dd></div>
+        <div><dt>Platforms</dt><dd>Microsoft Dynamics 365, KingswaySoft, Guidewire, DealerSocket, Google DV360, LinkedIn Ads, Meta Ads</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Looking for a data engineer? Let's talk.</h2>
+      <a class="email" href="mailto:rakeshgpgiriyapura@gmail.com">rakeshgpgiriyapura@gmail.com</a>
+      <div class="links">
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rakesh-g-p-442786148" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/RakeshGP-Rockey" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-solid" href="resume.pdf">Download résumé</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Rakesh G P</span>
+    <span>B.E. Electronics and Communication, VTU, 2017</span>
+  </div>
+</footer>
+
+<script>
+  // One-time light-up of the pipeline stages when it scrolls into view
+  (function () {
+    var stages = document.querySelectorAll('.stage');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      stages.forEach(function (s) { s.classList.add('lit'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      stages.forEach(function (s, i) {
+        setTimeout(function () { s.classList.add('lit'); }, i * 280);
+      });
+    }, { threshold: 0.4 });
+    io.observe(document.querySelector('.stages'));
+  })();
+</script>
+</body>
+</html>
